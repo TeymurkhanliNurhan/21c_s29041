@@ -47,3 +47,10 @@ try:
     print("Generated list of squares:", result)
 except InvalidRangeError as e:
     print("Error:", e)
+
+    # task6
+    # I imported a new module square_generator.py and imported SquareGenerator class to there
+    from square_generator import SquareGenerator
+
+    moduleGenerator = SquareGenerator
+    print("Squares from module: ", moduleGenerator.generate_squares(1, 1, 10))
