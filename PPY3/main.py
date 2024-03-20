@@ -83,3 +83,19 @@ class CubicGenerator(SquareGenerator):
 cubic_gen = CubicGenerator()
 result = cubic_gen.generate_squares(1, 5)
 print("Cubes from the subclass:", result)
+
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End value cannot be less than start value for square generation")
+
+        squares = [x ** 2 for x in range(start, end + 1)]
+        return squares
+
+# Example usage:
+cubic_gen = CubicGenerator()
+try:
+    result = cubic_gen.generate_squares(5, 1)
+    print("Generated list of squares:", result)
+except ValueError as e:
+    print("Error:", e)
