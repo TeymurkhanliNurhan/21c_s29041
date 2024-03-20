@@ -10,3 +10,15 @@ def squareFunc(start, end):
     return squares2
 
 print("task2: ",squareFunc(1,11))
+
+
+#task3
+class SquareClass:
+    def class_square_method(self,start,end):
+     squares3=[x**2 for x in range(start,end)]
+     return squares3
+
+start=int(input("Enter start "))
+end=int(input("Enter end "))
+squareGen=SquareClass()
+print("Squares with class: ",squareGen.class_square_method(start,end+1))
