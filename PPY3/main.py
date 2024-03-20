@@ -54,3 +54,9 @@ except InvalidRangeError as e:
 
     moduleGenerator = SquareGenerator
     print("Squares from module: ", moduleGenerator.generate_squares(1, 1, 10))
+
+#task7
+#I transformed module into package
+from packageTask7.square_generator import SquareGenerator
+packageGenerator=SquareGenerator
+print("Squares from package: ",packageGenerator.generate_squares(1,1,10))
