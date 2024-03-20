@@ -22,3 +22,8 @@ start=int(input("Enter start "))
 end=int(input("Enter end "))
 squareGen=SquareClass()
 print("Squares with class: ",squareGen.class_square_method(start,end+1))
+
+#task4
+squareGen4=SquareClass()
+roots=[math.sqrt(x) for x in squareGen4.class_square_method(start,end+1)]
+print("Roots from class with library: ",roots)
