@@ -27,3 +27,23 @@ print("Squares with class: ",squareGen.class_square_method(start,end+1))
 squareGen4=SquareClass()
 roots=[math.sqrt(x) for x in squareGen4.class_square_method(start,end+1)]
 print("Roots from class with library: ",roots)
+
+#task5
+class InvalidRangeError(Exception):
+    """"""
+class SquareGenerator:
+    def generate_squares(self, start, end):
+
+        if end < start:
+            raise InvalidRangeError("End value cannot be less than start value")
+
+        squares = [x ** 2 for x in range(start, end + 1)]
+        return squares
+
+
+squareGen5 = SquareGenerator()
+try:
+    result = squareGen5.generate_squares(10, 1)
+    print("Generated list of squares:", result)
+except InvalidRangeError as e:
+    print("Error:", e)
