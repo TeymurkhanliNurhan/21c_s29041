@@ -99,3 +99,22 @@ try:
     print("Generated list of squares:", result)
 except ValueError as e:
     print("Error:", e)
+
+#task10
+from abc import ABC, abstractmethod
+
+class SquareGenerator(ABC):
+    @abstractmethod
+    def generate_squares(self, start, end):
+        pass
+
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End value cannot be less than start value")
+
+        squares = [x ** 3 for x in range(start, end + 1)]
+        return squares
+
+cubic_gen = CubicGenerator()
+print("From ABC class: ",cubic_gen.generate_squares(1, 5))
